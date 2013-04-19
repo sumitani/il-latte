@@ -10,7 +10,7 @@
 // Taken at http://sedition.com/perl/javascript-fy.html
 function randomize_it (this_array) {
   var i = this_array.length;
-  if  (i == 0) return false;
+  if (i == 0) return false;
   while (--i)
   {
      var j = Math.floor(Math.random() * ( i + 1 ));
@@ -37,6 +37,9 @@ function analyze_that(id)
     if (already_clicked_this(id) == true)
         return;
 
+    quadro = document.getElementById("pos_"+id);
+    quadro.src = image_mapping[id];
+
     if (old_address != "")
     {
         ad_1 = document.getElementById("pos_"+old_address[0]);
@@ -47,7 +50,6 @@ function analyze_that(id)
     }
 
     if (current_address == "") {
-		// Adiciona o mapeamento
         current_address[0] = image_mapping[id];
         current_address[1] = id;
     }
@@ -55,14 +57,12 @@ function analyze_that(id)
     {
         if (current_address[0] != image_mapping[id])
         {
-			// 
             old_address[1] = current_address[1];
             old_address[0] = id;
             current_address = [];
         }
         else
         {
-			// Houve o match
             ids_used.push(current_address[1]);
             ids_used.push(id);
             current_address = [];
