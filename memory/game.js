@@ -25,7 +25,7 @@ function randomize_it (this_array) {
      var tempj = this_array[j];
      this_array[i] = tempj;
      this_array[j] = tempi;
-   }
+  }
 }
 
 function already_clicked_this(id)
@@ -88,7 +88,7 @@ function write_a_table(image_mapping)
     {
         document.write("<tr>");
         for (y = 0; y < 5; y++) {
-            document.write("<td><div><img id=\"pos_"+counter+"\" src=\"11.png\" onclick=\"analyze_that('" + counter + "');\" /></div></td>");
+            document.write("<td><div><img id=\"pos_"+counter+"\" draggable=\"false\" src=\"11.png\" onclick=\"analyze_that('" + counter + "');\" /></div></td>");
             counter++;
         }
         document.write("</tr>");
@@ -110,4 +110,40 @@ function update_table()
 	randomize_it(image_mapping);
 
 	write_a_table(image_mapping);
+}
+
+var showing_images;
+var counter_showing_images;
+
+function show_images()
+{
+	for (id = 0; id < 20; id++)
+	{
+		pos_id = document.getElementById("pos_"+id);
+		pos_id.src = image_mapping[id];
+	}
+	showing_images = setInterval(close_them, 2000);
+	counter_showing_images = setInterval(decrease_show_counter, 1000);
+}
+
+function close_them()
+{
+	clearInterval(showing_images);
+	counter_field = document.getElementById("counter_show");
+	counter_field.innerHTML = "<div id=\"counter_show\"></br></div>";
+	clearInterval(counter_showing_images);
+	
+	for (id = 0; id < 20; id++)
+	{
+		pos_id = document.getElementById("pos_"+id);
+		pos_id.src = "11.png";
+	}
+}
+
+function decrease_show_counter()
+{
+	counter_field = document.getElementById("counter_show");
+	counter = counter_field.innerText;
+	counter = +counter - 1;
+	counter_field.innerText = counter;
 }

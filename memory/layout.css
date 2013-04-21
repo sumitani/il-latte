@@ -1,16 +1,23 @@
 #main {
-	font-family: arial, helvetica, sans-serif;
-	background: #FF95A1;
+	font-family: impact, arial, helvetica, sans-serif;
+	background: #FFA540;
 	color: #854600;
+	cursor: default;
 }
 #title {
-	font-size: 120%;
+	font-size: 150%;
 }
 #cards_table {
-	
+	background: #00768F;
+	cursor: crosshair;
 }
 #restart_button {
 	width: 100px;
 	height: 20px;
 	background: #60BDFF;
+	color: #FFFFFF;
+	cursor:crosshair;
+}
+#restart_button:hover {
+	background: #75CEFF;
 }
