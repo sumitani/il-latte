@@ -68,6 +68,9 @@ function analyze_that(id)
             current_address = [];
         }
     }
+
+    if( ids_used.length == 20 )
+        alert('Parabéns! Você ganhou!');
 }
 
 function write_a_table(image_mapping)
@@ -103,5 +106,6 @@ randomize_it(image_mapping);
 write_a_table(image_mapping);
 
 </script>
+<p align="center"><button type="button" onclick="location.reload()">Recomeçar!</button></p>
 </body>
 </html>
