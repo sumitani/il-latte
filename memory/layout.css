@@ -1,0 +1,16 @@
+#main {
+	font-family: arial, helvetica, sans-serif;
+	background: #FF95A1;
+	color: #854600;
+}
+#title {
+	font-size: 120%;
+}
+#cards_table {
+	
+}
+#restart_button {
+	width: 100px;
+	height: 20px;
+	background: #60BDFF;
+}
